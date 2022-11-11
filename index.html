@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Friendship</title>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <div
+      class="gallery"
+      x-data="{
+    open: 'cats',toggle(creatures) {this.open=creatures}
+  }"
+    >
+      <div class="tabs">
+        <div class="all" @click="toggle('all')">
+          <a class="sort-links" href="#">All</a>
+        </div>
+        <div class="cats" @click="toggle('cats')">
+          <a class="sort-links" href="#">Cats</a>
+        </div>
+        <div class="dogs" @click="toggle('dogs')">
+          <a class="sort-links" href="#">Dogs</a>
+        </div>
+      </div>
+      <div class="images">
+        <div class="singleImg" x-show="open=='dogs' || open=='all'">
+          <img src="assets/dog.jpg" alt="" />
+          <img src="assets/dog1.jpg" alt="" />
+          <img src="assets/dog2.jpg" alt="" />
+        </div>
+        <div class="singleImg" x-show="open=='cats' || open=='all'">
+          <img src="assets/cat.jpg" alt="" />
+          <img src="assets/cat1.jpg" alt="" />
+          <img src="assets/cat2.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
